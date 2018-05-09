@@ -1,0 +1,4 @@
+.\tete
+.\retete
+.\retete\vision
+.\tete\camarade

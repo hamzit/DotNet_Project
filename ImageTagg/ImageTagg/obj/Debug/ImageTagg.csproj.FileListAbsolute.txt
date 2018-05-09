@@ -1,0 +1,8 @@
+c:\users\antoi\documents\visual studio 2015\Projects\ImageTagg\ImageTagg\bin\Debug\ImageTagg.exe.config
+c:\users\antoi\documents\visual studio 2015\Projects\ImageTagg\ImageTagg\bin\Debug\ImageTagg.exe
+c:\users\antoi\documents\visual studio 2015\Projects\ImageTagg\ImageTagg\bin\Debug\ImageTagg.pdb
+c:\users\antoi\documents\visual studio 2015\Projects\ImageTagg\ImageTagg\obj\Debug\ImageTagg.Form1.resources
+c:\users\antoi\documents\visual studio 2015\Projects\ImageTagg\ImageTagg\obj\Debug\ImageTagg.Properties.Resources.resources
+c:\users\antoi\documents\visual studio 2015\Projects\ImageTagg\ImageTagg\obj\Debug\ImageTagg.csproj.GenerateResource.Cache
+c:\users\antoi\documents\visual studio 2015\Projects\ImageTagg\ImageTagg\obj\Debug\ImageTagg.exe
+c:\users\antoi\documents\visual studio 2015\Projects\ImageTagg\ImageTagg\obj\Debug\ImageTagg.pdb
