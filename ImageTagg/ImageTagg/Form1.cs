@@ -9,11 +9,16 @@ namespace ImageTagg
 {
     public partial class Form1 : Form
     {
+        private ListeImages listeImages = new ListeImages();
         private OpenFileDialog open;
-        //List<Panel> listePanel = new List<Panel>();
         public Form1()
         {
+            if (!Directory.Exists(".\\images")) {
+                Directory.CreateDirectory(".\\images");
+            }
+
             InitializeComponent();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -173,12 +178,18 @@ namespace ImageTagg
             open.FilterIndex = 1;
             if (open.ShowDialog() == DialogResult.OK)
             {
-                pictureBox1.ImageLocation = open.FileName;
-                string[] chemin = open.FileName.Split('\\');
-                string nom = chemin[chemin.Length - 1];
-                textBox1.Text = nom;
-                panel2.Visible = true;
+                /* pictureBox1.ImageLocation = open.FileName;
+                 string[] chemin = open.FileName.Split('\\');
+                 string nom = chemin[chemin.Length - 1];
+                 textBox1.Text = nom;
+                 panel2.Visible = true;*/
+                Console.WriteLine("tessst");
+                Console.WriteLine(open.FileName);
+                this.listeImages.LoadPicture(open.FileName);
+                //pictureBox1.ImageLocation = open.FileName;
+                this.afficherImages();
             }
+            Console.WriteLine("tessst");
         }
 
         private void ajoutDeTagToolStripMenuItem_Click(object sender, EventArgs e)
@@ -234,6 +245,34 @@ namespace ImageTagg
                     this.panel1.Controls.Add(pic);
                 }
             }
+        }
+
+        private void afficherImages()
+        {
+            List<PictureBox> allImages = listeImages.getAllImages();
+            int x = 20;
+            int y = 40;
+            int maxHeight = -1;
+            panel1.Visible = true;
+            panel1.Controls.Clear();
+            pictureBox1.Visible = false;
+            PictureBox pic = new PictureBox();
+            allImages[0].Image = Image.FromFile(allImages[0].Name);
+
+            allImages[0].Width = 100;
+            allImages[0].Height = 100;
+            allImages[0].SizeMode = PictureBoxSizeMode.StretchImage;
+            allImages[0].Location = new Point(x, y);
+            x += pic.Width + 10;
+
+            maxHeight = Math.Max(pic.Height, maxHeight);
+            if (x > this.panel1.Width - 100)
+            {
+                x = 20;
+                y += maxHeight + 10;
+            }
+            this.panel1.Controls.Add(allImages[0]);
+            Console.WriteLine(allImages[0].Name);
         }
 
         private void button4_Click_1(object sender, EventArgs e)

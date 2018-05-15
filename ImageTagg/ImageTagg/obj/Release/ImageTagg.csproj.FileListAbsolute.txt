@@ -8,3 +8,13 @@ c:\users\antoi\documents\visual studio 2015\Projects\ImageTagg\ImageTagg\obj\Rel
 c:\users\antoi\documents\visual studio 2015\Projects\ImageTagg\ImageTagg\obj\Release\ImageTagg.pdb
 C:\Users\antoi\documents\visual studio 2015\Projects\ImageTagg\ImageTagg\obj\Release\ImageTagg.csprojResolveAssemblyReference.cache
 C:\Users\antoi\documents\visual studio 2015\Projects\ImageTagg\ImageTagg\bin\Release\Tag.txt
+C:\Users\mad-h\Desktop\Tag\DotNet_Project\ImageTagg\ImageTagg\bin\Release\ImageTagg.exe.config
+C:\Users\mad-h\Desktop\Tag\DotNet_Project\ImageTagg\ImageTagg\obj\Release\ImageTagg.exe
+C:\Users\mad-h\Desktop\Tag\DotNet_Project\ImageTagg\ImageTagg\obj\Release\ImageTagg.pdb
+C:\Users\mad-h\Desktop\Tag\DotNet_Project\ImageTagg\ImageTagg\bin\Release\Tag.txt
+C:\Users\mad-h\Desktop\Tag\DotNet_Project\ImageTagg\ImageTagg\bin\Release\ImageTagg.exe
+C:\Users\mad-h\Desktop\Tag\DotNet_Project\ImageTagg\ImageTagg\bin\Release\ImageTagg.pdb
+C:\Users\mad-h\Desktop\Tag\DotNet_Project\ImageTagg\ImageTagg\obj\Release\ImageTagg.csprojResolveAssemblyReference.cache
+C:\Users\mad-h\Desktop\Tag\DotNet_Project\ImageTagg\ImageTagg\obj\Release\ImageTagg.Form1.resources
+C:\Users\mad-h\Desktop\Tag\DotNet_Project\ImageTagg\ImageTagg\obj\Release\ImageTagg.Properties.Resources.resources
+C:\Users\mad-h\Desktop\Tag\DotNet_Project\ImageTagg\ImageTagg\obj\Release\ImageTagg.csproj.GenerateResource.Cache
