@@ -33,6 +33,7 @@ namespace ImageTagg
                     listChemin.Add(f.File);
                     PictureBox pic = new PictureBox();
                     pic.Image = Image.FromFile(f.File);
+                    pic.Name = f.File;
                     this.listPhoto.Add(pic);
                 }
             }
@@ -67,13 +68,16 @@ namespace ImageTagg
         {
             foreach (string namePi in name)
             {
-                this.listChemin.Add(namePi);
-                PictureBox pic = new PictureBox();
-                pic.Image = Image.FromFile(namePi);
-                pic.Name = namePi;
-                this.listPhoto.Add(pic);
-                this.listPhotoCharge.Add(pic);
-                pic.Click += Pic_Click1;
+                if (this.listChemin.Contains(namePi) == false)
+                {
+                    this.listChemin.Add(namePi);
+                    PictureBox pic = new PictureBox();
+                    pic.Image = Image.FromFile(namePi);
+                    pic.Name = namePi;
+                    this.listPhoto.Add(pic);
+                    this.listPhotoCharge.Add(pic);
+                   // pic.Click += Pic_Click1;
+                }
             }
 
         }
@@ -95,35 +99,31 @@ namespace ImageTagg
             }
         }
 
-        public void PremierAjouter(String filename,String tag)
-        {
-            string[] name = filename.Split('\\');
-            string newChemin = ".\\images"+"\\" + tag;
-            Directory.CreateDirectory(newChemin);
-            newChemin +=  "\\" + name[name.Length - 1];
-            Console.WriteLine("avant copy");
-            File.Copy(filename, newChemin, true);
-            Console.WriteLine("apres copy");
-            listChemin.Add( newChemin);
-            PictureBox pic = new PictureBox();
-            pic.Image = Image.FromFile(newChemin);
-            this.listPhoto.Add(pic);
-        }
+       
         public void updateTag(String fileName, String operation, String tag)
         {
             if (operation == "Ajouter"){
-                string[] liste = fileName.Split('\\');
+               
                 string newChemin = "";
-                for (int i = 0; i < liste.Length - 2; i++)
+                string[] liste = fileName.Split('\\');
+                if (fileName.Contains("images"))
                 {
-                    newChemin += liste[i] + "\\";
+                    for (int i = 0; i < liste.Length - 1; i++)
+                        newChemin += liste[i] + "\\";
                 }
-                newChemin += tag ;
+                else
+                {
+                    string[] name = fileName.Split('\\');
+                    newChemin = ".\\images" + "\\" ;
+                }
+                newChemin += tag;
                 if (!Directory.Exists(newChemin))
                 {
                     Directory.CreateDirectory(newChemin);
                 }
-                newChemin += "\\"+liste[liste.Length - 1];
+                Console.WriteLine(fileName);
+                newChemin += "\\" + liste[liste.Length - 1];
+                
                 File.Copy(fileName, newChemin, true);
                 //File.Delete(fileName);
                 int indice = listChemin.IndexOf(fileName);

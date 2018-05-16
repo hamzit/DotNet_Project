@@ -13,13 +13,7 @@ namespace ImageTagg
         private OpenFileDialog open;
         public Form1()
         {
-            if (!Directory.Exists(".\\images")) {
-                Directory.CreateDirectory(".\\images");
-            }
-
             InitializeComponent();
-            this.afficherImages(listeImages.getAllImages());
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -31,14 +25,14 @@ namespace ImageTagg
                 {
                     foreach (string val in listeSec) {
                         if (val.Contains(textBox3.Text) == false)
-                            listeImages.PremierAjouter(val,  textBox3.Text);
+                            listeImages.updateTag(val, "Ajouter", textBox3.Text);
                     }
                 }
                 else if(textBox3.Text.CompareTo("") == 0 && comboBox2.SelectedItem != null){
                     foreach (string val in listeSec)
                     {
                         if (val.Contains(textBox3.Text) == false)
-                            listeImages.PremierAjouter(val, comboBox2.Text);
+                            listeImages.updateTag(val, "Ajouter", comboBox2.Text);
                     }
                 }
             }
@@ -47,28 +41,12 @@ namespace ImageTagg
        
         private void Form1_Load(object sender, EventArgs e)
         {
-            
-            panel2.Visible = true;
-            try
+            if (!Directory.Exists(".\\images"))
             {
-                StreamReader sr = new StreamReader(".\\Tag.txt");
-                string line = sr.ReadLine();
-                comboBox2.Items.Clear();
-                comboBox3.Items.Clear();
-                comboBox4.Items.Clear();
-                while (line != null)
-                {
-                    comboBox2.Items.Add(line);
-                    comboBox3.Items.Add(line);
-                    comboBox4.Items.Add(line);
-                    line = sr.ReadLine();
-                }
-                sr.Close();
+                Directory.CreateDirectory(".\\images");
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
+
+            this.afficherImages(listeImages.getAllImages());
         }
 
 
@@ -113,27 +91,13 @@ namespace ImageTagg
                     y += maxHeight + 10;
                 }
                 pan.BackColor = Color.Gray;
-                //imagge.Click += this.listeImages.Pic_Click1;
-                //imagge.DoubleClick += Imagge_DoubleClick;
+                imagge.Click += this.listeImages.Pic_Click1;
                 pan.Controls.Add(imagge);
                 this.panel1.Controls.Add(pan);
             }
         }
 
-        private void Imagge_DoubleClick(object sender, EventArgs e)
-        {
-
-            PictureBox pic = (PictureBox)sender;
-            pic.Width = panel6.Width-10;
-            pic.Height = panel6.Height-10;
-            panel6.Controls.Add(pic);
-            Button buto = new Button();
-            panel6.Controls.Add(buto);
-            panel1.Visible = false;
-            panel6.Visible = true;
-            
-
-        }
+        
 
         private void toutAfficherToolStripMenuItem_Click(object sender, EventArgs e)
         {
