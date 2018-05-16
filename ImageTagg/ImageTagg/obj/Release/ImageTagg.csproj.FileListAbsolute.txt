@@ -18,3 +18,13 @@ C:\Users\mad-h\Desktop\Tag\DotNet_Project\ImageTagg\ImageTagg\obj\Release\ImageT
 C:\Users\mad-h\Desktop\Tag\DotNet_Project\ImageTagg\ImageTagg\obj\Release\ImageTagg.Form1.resources
 C:\Users\mad-h\Desktop\Tag\DotNet_Project\ImageTagg\ImageTagg\obj\Release\ImageTagg.Properties.Resources.resources
 C:\Users\mad-h\Desktop\Tag\DotNet_Project\ImageTagg\ImageTagg\obj\Release\ImageTagg.csproj.GenerateResource.Cache
+C:\Users\antoi\Desktop\DotNet_Project\ImageTagg\ImageTagg\bin\Release\ImageTagg.exe.config
+C:\Users\antoi\Desktop\DotNet_Project\ImageTagg\ImageTagg\obj\Release\ImageTagg.exe
+C:\Users\antoi\Desktop\DotNet_Project\ImageTagg\ImageTagg\obj\Release\ImageTagg.pdb
+C:\Users\antoi\Desktop\DotNet_Project\ImageTagg\ImageTagg\bin\Release\Tag.txt
+C:\Users\antoi\Desktop\DotNet_Project\ImageTagg\ImageTagg\bin\Release\ImageTagg.exe
+C:\Users\antoi\Desktop\DotNet_Project\ImageTagg\ImageTagg\bin\Release\ImageTagg.pdb
+C:\Users\antoi\Desktop\DotNet_Project\ImageTagg\ImageTagg\obj\Release\ImageTagg.csprojResolveAssemblyReference.cache
+C:\Users\antoi\Desktop\DotNet_Project\ImageTagg\ImageTagg\obj\Release\ImageTagg.Form1.resources
+C:\Users\antoi\Desktop\DotNet_Project\ImageTagg\ImageTagg\obj\Release\ImageTagg.Properties.Resources.resources
+C:\Users\antoi\Desktop\DotNet_Project\ImageTagg\ImageTagg\obj\Release\ImageTagg.csproj.GenerateResource.Cache
