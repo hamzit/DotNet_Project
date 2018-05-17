@@ -56,14 +56,13 @@
             this.aideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -86,6 +85,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Modifier";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -176,7 +176,7 @@
             this.panel3.Controls.Add(this.comboBox3);
             this.panel3.Controls.Add(this.textBox4);
             this.panel3.Controls.Add(this.button2);
-            this.panel3.Location = new System.Drawing.Point(840, 214);
+            this.panel3.Location = new System.Drawing.Point(840, 222);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(300, 150);
             this.panel3.TabIndex = 20;
@@ -229,9 +229,9 @@
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.comboBox4);
             this.panel4.Controls.Add(this.button3);
-            this.panel4.Location = new System.Drawing.Point(840, 370);
+            this.panel4.Location = new System.Drawing.Point(840, 387);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(300, 116);
+            this.panel4.Size = new System.Drawing.Size(300, 158);
             this.panel4.TabIndex = 21;
             // 
             // label12
@@ -249,7 +249,7 @@
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Adobe Heiti Std R", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label11.Location = new System.Drawing.Point(47, 14);
+            this.label11.Location = new System.Drawing.Point(28, 11);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(190, 24);
             this.label11.TabIndex = 4;
@@ -275,7 +275,7 @@
             this.aideToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(175, 20);
+            this.menuStrip1.Size = new System.Drawing.Size(175, 24);
             this.menuStrip1.TabIndex = 22;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -284,7 +284,7 @@
             this.fichierToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.chargerDossierToolStripMenuItem});
             this.fichierToolStripMenuItem.Name = "fichierToolStripMenuItem";
-            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(54, 16);
+            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.fichierToolStripMenuItem.Text = "Fichier";
             // 
             // chargerDossierToolStripMenuItem
@@ -300,7 +300,7 @@
             this.mosaToolStripMenuItem,
             this.toutAfficherToolStripMenuItem});
             this.affichageToolStripMenuItem.Name = "affichageToolStripMenuItem";
-            this.affichageToolStripMenuItem.Size = new System.Drawing.Size(70, 16);
+            this.affichageToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
             this.affichageToolStripMenuItem.Text = "Affichage";
             // 
             // mosaToolStripMenuItem
@@ -319,7 +319,7 @@
             // aideToolStripMenuItem
             // 
             this.aideToolStripMenuItem.Name = "aideToolStripMenuItem";
-            this.aideToolStripMenuItem.Size = new System.Drawing.Size(43, 16);
+            this.aideToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.aideToolStripMenuItem.Text = "Aide";
             // 
             // panel5
@@ -329,7 +329,7 @@
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel5.Location = new System.Drawing.Point(0, 55);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(241, 518);
+            this.panel5.Size = new System.Drawing.Size(241, 535);
             this.panel5.TabIndex = 23;
             // 
             // panel1
@@ -339,35 +339,16 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoScroll = true;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.panel6);
-            this.panel1.Location = new System.Drawing.Point(247, 55);
+            this.panel1.Location = new System.Drawing.Point(247, 56);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(587, 518);
-            this.panel1.TabIndex = 24;
-            // 
-            // panel6
-            // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel6.Location = new System.Drawing.Point(3, 3);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(577, 466);
-            this.panel6.TabIndex = 0;
-            this.panel6.Visible = false;
+            this.panel1.Size = new System.Drawing.Size(587, 294);
+            this.panel1.TabIndex = 29;
             // 
             // textBox5
             // 
             this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.AutoCompleteCustomSource.AddRange(new string[] {
-            "Chien",
-            "Famille",
-            "Julie",
-            "Paysage",
-            "Plage",
-            "Vacance"});
             this.textBox5.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.textBox5.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -388,11 +369,19 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
+            // panel6
+            // 
+            this.panel6.Location = new System.Drawing.Point(247, 356);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(587, 204);
+            this.panel6.TabIndex = 28;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1152, 548);
+            this.ClientSize = new System.Drawing.Size(1152, 565);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
@@ -413,7 +402,6 @@
             this.panel4.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -450,7 +438,7 @@
         private System.Windows.Forms.ToolStripMenuItem toutAfficherToolStripMenuItem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Panel panel6;
+        public System.Windows.Forms.Panel panel6;
     }
 }
 

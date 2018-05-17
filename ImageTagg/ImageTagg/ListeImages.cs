@@ -76,34 +76,18 @@ namespace ImageTagg
                     pic.Name = namePi;
                     this.listPhoto.Add(pic);
                     this.listPhotoCharge.Add(pic);
-                   // pic.Click += Pic_Click1;
                 }
             }
 
         }
 
       
-
-        public void Pic_Click1(object sender, EventArgs e)
-        {
-            PictureBox pic = (PictureBox)sender;
-            if (ListeSelectionnee.Contains(pic.Name))
-            {
-                pic.BorderStyle = BorderStyle.FixedSingle;
-                ListeSelectionnee.Remove(pic.Name);
-            }
-            else
-            {
-                pic.BorderStyle = BorderStyle.Fixed3D;
-                ListeSelectionnee.Add(pic.Name);
-            }
-        }
-
        
         public void updateTag(String fileName, String operation, String tag)
         {
-            if (operation == "Ajouter"){
-               
+            if (operation == "Ajouter")
+            {
+
                 string newChemin = "";
                 string[] liste = fileName.Split('\\');
                 if (fileName.Contains("images"))
@@ -114,7 +98,7 @@ namespace ImageTagg
                 else
                 {
                     string[] name = fileName.Split('\\');
-                    newChemin = ".\\images" + "\\" ;
+                    newChemin = ".\\images" + "\\";
                 }
                 newChemin += tag;
                 if (!Directory.Exists(newChemin))
@@ -123,7 +107,7 @@ namespace ImageTagg
                 }
                 Console.WriteLine(fileName);
                 newChemin += "\\" + liste[liste.Length - 1];
-                
+
                 File.Copy(fileName, newChemin, true);
                 //File.Delete(fileName);
                 int indice = listChemin.IndexOf(fileName);
@@ -133,7 +117,9 @@ namespace ImageTagg
                 pic.Image = Image.FromFile(newChemin);
                 this.listPhoto[indice] = pic;
 
-            } else if (operation == "Supprimer") {
+            }
+            else if (operation == "Supprimer")
+            {
 
                 string[] liste = fileName.Split('\\');
                 int id = this.indice(liste, tag);
@@ -148,7 +134,7 @@ namespace ImageTagg
                 {
                     Directory.CreateDirectory(newChemin);
                 }
-                newChemin +="\\"+ liste[liste.Length - 1];
+                newChemin += "\\" + liste[liste.Length - 1];
                 File.Copy(fileName, newChemin, true);
                 File.Delete(fileName);
                 int indice = listChemin.IndexOf(fileName);
@@ -158,8 +144,37 @@ namespace ImageTagg
                 pic.Image = Image.FromFile(newChemin);
                 this.listPhoto[indice] = pic;
 
-            } else if (operation == "Modifier"){
+            }
+            else if (operation == "Modifier")
+            {
 
+                string newChemin = "";
+                string[] liste = fileName.Split('\\');
+                if (fileName.Contains(tag))
+                {
+                    int i = 0;
+                    while (i < liste.Length -1)
+                    {
+                        if (liste[i].CompareTo(tag) != 0)
+                            newChemin += liste[i];
+                        else
+                            newChemin += tag;
+                        i++;
+                    }
+                    if (!Directory.Exists(newChemin))
+                    {
+                        Directory.CreateDirectory(newChemin);
+                    }
+                    newChemin += "\\" + liste[liste.Length - 1];
+                    File.Copy(fileName, newChemin, true);
+                    //File.Delete(fileName);
+                    int indice = listChemin.IndexOf(fileName);
+                    listChemin[indice] = newChemin;
+                    this.listPhoto[indice] = null;
+                    PictureBox pic = new PictureBox();
+                    pic.Image = Image.FromFile(newChemin);
+                    this.listPhoto[indice] = pic;
+                }
             }
         }
 

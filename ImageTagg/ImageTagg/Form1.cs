@@ -75,7 +75,6 @@ namespace ImageTagg
             int maxHeight = -1;
             panel1.Visible = true;
             panel1.Controls.Clear();
-            panel6.Visible = false;
             foreach (PictureBox imagge in allImages)
             {
                 Panel pan = new Panel();
@@ -91,13 +90,13 @@ namespace ImageTagg
                     y += maxHeight + 10;
                 }
                 pan.BackColor = Color.Gray;
-                imagge.Click += this.listeImages.Pic_Click1;
-                pan.Controls.Add(imagge);
+                imagge.Click += Pic_Click1;
+                pan.Controls.Add(imagge);               
                 this.panel1.Controls.Add(pan);
             }
         }
 
-        
+       
 
         private void toutAfficherToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -126,7 +125,44 @@ namespace ImageTagg
             else
                 afficherImages(this.listeImages.getAllImages());
         }
-        
+        public void Pic_Click1(object sender, EventArgs e)
+        {
+            PictureBox pic = (PictureBox)sender;
+            if (listeImages.getListeSelectionnee().Contains(pic.Name))
+            {
+                pic.BorderStyle = BorderStyle.FixedSingle;
+                listeImages.getListeSelectionnee().Remove(pic.Name);
+            }
+            else
+            {
+                pic.BorderStyle = BorderStyle.Fixed3D;
+                listeImages.getListeSelectionnee().Add(pic.Name);
+                PictureBox picte = new PictureBox();
+                picte.Image = Image.FromFile(pic.Name);
+                picte.SizeMode = PictureBoxSizeMode.StretchImage;
+                picte.Width = panel6.Width - 10;
+                picte.Height = panel6.Height;
+                this.panel6.Controls.Clear();
+                panel6.Controls.Add(picte);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            List<String> listeSec = listeImages.getListeSelectionnee();
+            if (listeSec.Count >= 1)
+            {
+                if (textBox3.Text.CompareTo("") != 0 && comboBox2.SelectedItem != null)
+                {
+                    foreach (string val in listeSec)
+                    {
+                        if (val.Contains(textBox3.Text) == false)
+                            listeImages.updateTag(val, "Modifier", textBox3.Text);
+                    }
+                }
+                
+            }
+        }
     }
   
 }
