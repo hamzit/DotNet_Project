@@ -54,7 +54,6 @@
             this.mosaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toutAfficherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
@@ -322,16 +321,6 @@
             this.aideToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.aideToolStripMenuItem.Text = "Aide";
             // 
-            // panel5
-            // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel5.Location = new System.Drawing.Point(0, 55);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(241, 535);
-            this.panel5.TabIndex = 23;
-            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -339,9 +328,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoScroll = true;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Location = new System.Drawing.Point(247, 56);
+            this.panel1.Location = new System.Drawing.Point(12, 56);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(587, 294);
+            this.panel1.Size = new System.Drawing.Size(822, 294);
             this.panel1.TabIndex = 29;
             // 
             // textBox5
@@ -371,9 +360,12 @@
             // 
             // panel6
             // 
-            this.panel6.Location = new System.Drawing.Point(247, 356);
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel6.Location = new System.Drawing.Point(12, 356);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(587, 204);
+            this.panel6.Size = new System.Drawing.Size(822, 204);
             this.panel6.TabIndex = 28;
             // 
             // Form1
@@ -388,7 +380,6 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -432,7 +423,6 @@
         private System.Windows.Forms.ToolStripMenuItem affichageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mosaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aideToolStripMenuItem;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.ToolStripMenuItem toutAfficherToolStripMenuItem;

@@ -25,14 +25,14 @@ namespace ImageTagg
                 {
                     foreach (string val in listeSec) {
                         if (val.Contains(textBox3.Text) == false)
-                            listeImages.updateTag(val, "Ajouter", textBox3.Text);
+                            listeImages.updateTag(val, "Ajouter", textBox3.Text,null);
                     }
                 }
                 else if(textBox3.Text.CompareTo("") == 0 && comboBox2.SelectedItem != null){
                     foreach (string val in listeSec)
                     {
                         if (val.Contains(textBox3.Text) == false)
-                            listeImages.updateTag(val, "Ajouter", comboBox2.Text);
+                            listeImages.updateTag(val, "Ajouter", comboBox2.Text,null);
                     }
                 }
             }
@@ -47,6 +47,7 @@ namespace ImageTagg
             }
 
             this.afficherImages(listeImages.getAllImages());
+            loadCombox();
         }
 
 
@@ -132,6 +133,7 @@ namespace ImageTagg
             {
                 pic.BorderStyle = BorderStyle.FixedSingle;
                 listeImages.getListeSelectionnee().Remove(pic.Name);
+                loadCombox();
             }
             else
             {
@@ -139,25 +141,40 @@ namespace ImageTagg
                 listeImages.getListeSelectionnee().Add(pic.Name);
                 PictureBox picte = new PictureBox();
                 picte.Image = Image.FromFile(pic.Name);
-                picte.SizeMode = PictureBoxSizeMode.StretchImage;
+                picte.SizeMode = PictureBoxSizeMode.Zoom;
                 picte.Width = panel6.Width - 10;
                 picte.Height = panel6.Height;
                 this.panel6.Controls.Clear();
                 panel6.Controls.Add(picte);
+                loadCombox();
+
             }
         }
-
+        public void loadCombox()
+        {
+            comboBox2.Items.Clear();
+            comboBox3.Items.Clear();
+            comboBox4.Items.Clear();
+            List<String> liste  = listeImages.ComboxTag(listeImages.getListeSelectionnee());
+            foreach (String name in liste)
+            {
+                comboBox2.Items.Add(name);
+                comboBox3.Items.Add(name);
+                comboBox4.Items.Add(name);
+            }
+            
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             List<String> listeSec = listeImages.getListeSelectionnee();
             if (listeSec.Count >= 1)
             {
-                if (textBox3.Text.CompareTo("") != 0 && comboBox2.SelectedItem != null)
+                if (textBox3.Text.CompareTo("") != 0 && comboBox3.SelectedItem != null)
                 {
                     foreach (string val in listeSec)
                     {
                         if (val.Contains(textBox3.Text) == false)
-                            listeImages.updateTag(val, "Modifier", textBox3.Text);
+                            listeImages.updateTag(val, "Modifier", comboBox3.Text, textBox3.Text);
                     }
                 }
                 

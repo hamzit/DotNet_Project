@@ -83,7 +83,7 @@ namespace ImageTagg
 
       
        
-        public void updateTag(String fileName, String operation, String tag)
+        public void updateTag(String fileName, String operation, String tag,String nvTag)
         {
             if (operation == "Ajouter")
             {
@@ -158,7 +158,7 @@ namespace ImageTagg
                         if (liste[i].CompareTo(tag) != 0)
                             newChemin += liste[i];
                         else
-                            newChemin += tag;
+                            newChemin += nvTag;
                         i++;
                     }
                     if (!Directory.Exists(newChemin))
@@ -186,5 +186,19 @@ namespace ImageTagg
             return ind;
         }
 
+        public List<string> ComboxTag(List<string> ListeSelect)
+        {
+            List<string> listeC = new List<string>();
+            foreach(String name in ListeSelect)
+            {
+                String[] tag = name.Split('\\');
+                for (int i = 0; i< tag.Length - 2;i++)
+                {
+                    if (listeC.Contains(tag[i]) == false )
+                        listeC.Add(tag[i]);
+                }
+            }
+            return listeC;
+        }
     }
 }
